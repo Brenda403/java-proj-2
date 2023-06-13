@@ -3,68 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
-        //Classes for project pt 1
-
-        //pt1.2. Generic Cupcake
-        class Cupcake {
-            public double price;
-            public double getPrice(){
-                return price;
-            };
-            public void setPrice(double price){
-               this.price = price;
-            };
-
-            public void type() {
-                System.out.println("A basic, generic cupcake, with vanilla frosting.");
-            }
-        }
-
-        //pt1.3. Cupcake Variants
-        class RedVelvet extends Cupcake {
-            public void type() {
-                System.out.println("A red velvet based cupcake, with cream cheese frosting.");
-            }
-        }
-
-        class Chocolate extends Cupcake {
-            public void type() {
-                System.out.println("A chocolate based cupcake, with chocolate frosting.");
-            }
-        }
-
-        // Classes for proj pt 2
-
-        class Drink {
-            public double price;
-
-            public double getPrice(){
-                return price;
-            }
-
-            public void setPrice(double price){
-                this.price = price;
-            }
-
-            public void type() {
-                System.out.println("A bottle of water");
-            }
-        }
-
-        class Soda extends Drink {
-            public void type() {
-                System.out.println("A bottle of soda");
-            }
-        }
-
-        class Milk extends Drink {
-            public void type(){
-                System.out.println("A bottle of milk");
-            }
-        }
-
-    //pt1.4. Object Declaration
+        //pt1.4. Object Declaration
         ArrayList<Cupcake> cupcakeMenu = new ArrayList<Cupcake>();
 
         Cupcake cupcake = new Cupcake();
@@ -74,7 +13,7 @@ public class Main {
         Chocolate chocolate = new Chocolate();
 
 
-    //pt1.5. Pricing
+        //pt1.5. Pricing
 
         System.out.println("We are in the middle of creating the cupcake menu. We currently have three cupcakes on the menu but we need to decide pricing.");
 
@@ -148,7 +87,69 @@ public class Main {
         // Project 3.5
         new Order(cupcakeMenu, drinkMenu);
 
-
-
     }
 }
+        //Classes for project pt 1
+
+        class Cupcake {
+            public double price;
+            public double getPrice(){
+                return price;
+            };
+            public void setPrice(double price){
+               this.price = price;
+            };
+
+            public void type() {
+                System.out.println("A basic, generic cupcake, with vanilla frosting.");
+            }
+        }
+
+        //pt1.3. Cupcake Variants
+        class RedVelvet extends Cupcake {
+            public void type() {
+                System.out.println("A red velvet based cupcake, with cream cheese frosting.");
+            }
+        }
+
+        class Chocolate extends Cupcake {
+            public void type() {
+                System.out.println("A chocolate based cupcake, with chocolate frosting.");
+            }
+        }
+
+        // Classes for proj pt 2
+
+        class Drink {
+            public double price;
+
+            public double getPrice(){
+                return price;
+            }
+
+            public void setPrice(double price){
+                this.price = price;
+            }
+
+            public void type() {
+                System.out.println("A bottle of water");
+            }
+        }
+
+        class Soda extends Drink {
+            public void type() {
+                System.out.println("A bottle of soda");
+            }
+        }
+
+        class Milk extends Drink {
+            public void type(){
+                System.out.println("A bottle of milk");
+            }
+        }
+
+
+
+
+
+

@@ -9,7 +9,9 @@ import java.util.Scanner;
 public class Order {
 
     public Order(ArrayList<Cupcake> cupcakeMenu, ArrayList<Drink> drinkMenu){
+
         System.out.println("Hello Customer, Would you like to place an order? (Y or N)");
+
         Scanner input = new Scanner(System.in);
 
         String placeOrder = input.nextLine();
@@ -33,6 +35,7 @@ public class Order {
             }
 
             System.out.println("DRINKS:");
+
             //also inside if statement
             for (int i = 0; i < drinkMenu.size();i++){
                 itemNumber++;
@@ -44,7 +47,7 @@ public class Order {
             //project 3 pt 4
             boolean ordering = true;
             //still inside first if statement
-            while (ordering = true) {
+            while (ordering == true) {
                 System.out.println("What would you like to order? Please use the number associated with each item to order.");
                 int orderChoice = input.nextInt();
                 input.nextLine();
@@ -58,19 +61,19 @@ public class Order {
                     order.add(cupcakeMenu.get(2));
                     System.out.println("Item added to order.");
                 } else if (orderChoice == 4) {
-                    order.add(cupcakeMenu.get(3));
+                    order.add(drinkMenu.get(0));
                     System.out.println("Item added to order.");
                 } else if (orderChoice == 5) {
-                    order.add(cupcakeMenu.get(4));
+                    order.add(drinkMenu.get(1));
                     System.out.println("Item added to order.");
                 } else if (orderChoice == 6) {
-                    order.add(cupcakeMenu.get(5));
+                    order.add(drinkMenu.get(2));
                     System.out.println("Item added to order.");
                 } else {
                     System.out.println("Sorry, we don't seem to have that on the menu.");
                 }
 
-                System.out.println("Would you like ot keep ordering? (Y/N)");
+                System.out.println("Would you like to keep ordering? (Y/N)");
                 String continueOrder = input.nextLine();
 
                 if (!continueOrder.equalsIgnoreCase("Y")) {
@@ -82,8 +85,9 @@ public class Order {
 
             System.out.println(order.get(0));
             System.out.println(order.get(1));
-            Double subtotal = 0.0;
+            Double subTotal = 0.0;
 
+        for (int i = 2; i < order.size(); i++) {
             if (order.get(i).equals(cupcakeMenu.get(0))) {
                 cupcakeMenu.get(0).type();
                 System.out.println(cupcakeMenu.get(0).getPrice());
@@ -109,6 +113,7 @@ public class Order {
                 System.out.println(drinkMenu.get(2).getPrice());
                 subTotal = subTotal + drinkMenu.get(2).getPrice();
             }
+        }
             System.out.println("$" + subTotal);
             new CreateFile();
             new WriteToFile(order);
@@ -116,6 +121,7 @@ public class Order {
             System.out.println("Have a nice day then");
         }
     }
+
     //Project 4.2 Create File
     public class CreateFile {
         public CreateFile() {
